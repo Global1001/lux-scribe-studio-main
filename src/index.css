@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Luxury Document Editor Design System - Cursor-inspired aesthetic */
+
+@layer base {
+  :root {
+    /* Editor-specific color system */
+    --editor-background: 0 0% 100%;
+    --editor-surface: 0 0% 98%;
+    --editor-surface-hover: 0 0% 96%;
+    --editor-surface-active: 0 0% 94%;
+    --editor-border: 220 13% 91%;
+    --editor-border-hover: 220 13% 85%;
+    
+    /* Text colors */
+    --text-primary: 220 9% 15%;
+    --text-secondary: 220 9% 46%;
+    --text-muted: 220 9% 65%;
+    --text-inverse: 0 0% 100%;
+    
+    /* Accent colors */
+    --accent-blue: 215 100% 50%;
+    --accent-blue-hover: 215 100% 45%;
+    --accent-blue-light: 215 100% 97%;
+    --accent-purple: 262 83% 58%;
+    --accent-green: 142 76% 36%;
+    --accent-orange: 25 95% 53%;
+    --accent-red: 0 84% 60%;
+    
+    /* Rail colors */
+    --rail-background: 0 0% 99%;
+    --rail-border: 220 13% 93%;
+    --rail-hover: 220 13% 96%;
+    
+    /* Chat colors */
+    --chat-background: 0 0% 98.5%;
+    --chat-message-user: 215 100% 97%;
+    --chat-message-ai: 0 0% 96%;
+    
+    /* Editor content */
+    --content-background: 0 0% 100%;
+    --content-selection: 215 100% 90%;
+    
+    /* Animation */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Legacy shadcn variables for compatibility */
+    --background: 0 0% 100%;
+    --foreground: 220 9% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 9% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 9% 15%;
+    --primary: 215 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 13% 96%;
+    --secondary-foreground: 220 9% 15%;
+    --muted: 220 13% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 13% 96%;
+    --accent-foreground: 220 9% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 215 100% 50%;
+    --radius: 0.375rem;
+  }
+
+  .dark {
+    /* Dark theme editor colors */
+    --editor-background: 224 71% 4%;
+    --editor-surface: 220 13% 6%;
+    --editor-surface-hover: 220 13% 8%;
+    --editor-surface-active: 220 13% 10%;
+    --editor-border: 217 19% 12%;
+    --editor-border-hover: 217 19% 16%;
+    
+    /* Dark text colors */
+    --text-primary: 220 9% 95%;
+    --text-secondary: 220 9% 75%;
+    --text-muted: 220 9% 55%;
+    --text-inverse: 224 71% 4%;
+    
+    /* Dark accent colors */
+    --accent-blue: 215 100% 60%;
+    --accent-blue-hover: 215 100% 65%;
+    --accent-blue-light: 215 50% 10%;
+    --accent-purple: 262 83% 68%;
+    --accent-green: 142 76% 46%;
+    --accent-orange: 25 95% 63%;
+    --accent-red: 0 84% 70%;
+    
+    /* Dark rail colors */
+    --rail-background: 220 13% 5%;
+    --rail-border: 217 19% 10%;
+    --rail-hover: 220 13% 7%;
+    
+    /* Dark chat colors */
+    --chat-background: 220 13% 5.5%;
+    --chat-message-user: 215 50% 12%;
+    --chat-message-ai: 220 13% 8%;
+    
+    /* Dark editor content */
+    --content-background: 224 71% 4%;
+    --content-selection: 215 50% 25%;
+    
+    /* Legacy shadcn dark variables */
+    --background: 224 71% 4%;
+    --foreground: 220 9% 95%;
+    --card: 224 71% 4%;
+    --card-foreground: 220 9% 95%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 220 9% 95%;
+    --primary: 215 100% 60%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 220 9% 95%;
+    --muted: 217 19% 12%;
+    --muted-foreground: 220 9% 75%;
+    --accent: 217 19% 12%;
+    --accent-foreground: 220 9% 95%;
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 19% 12%;
+    --input: 217 19% 12%;
+    --ring: 215 100% 60%;
+  }
+}
+
+/* TipTap Editor Styles */
+.ProseMirror {
+  outline: none;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: hsl(var(--text-primary));
+  min-height: 400px;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: hsl(var(--text-primary));
+}
+
+.ProseMirror h1 { font-size: 2.25em; }
+.ProseMirror h2 { font-size: 1.875em; }
+.ProseMirror h3 { font-size: 1.5em; }
+
+.ProseMirror p {
+  margin-bottom: 1em;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.ProseMirror li {
+  margin-bottom: 0.25em;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid hsl(var(--accent-blue));
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  color: hsl(var(--text-secondary));
+}
+
+.ProseMirror code {
+  background-color: hsl(var(--editor-surface));
+  padding: 0.125em 0.25em;
+  border-radius: 3px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.875em;
+}
+
+.ProseMirror pre {
+  background-color: hsl(var(--editor-surface));
+  border-radius: 6px;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: none;
+  padding: 0;
+}
+
+.ProseMirror strong {
+  font-weight: 600;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror u {
+  text-decoration: underline;
+}
+
+/* Selection styling */
+.ProseMirror ::selection {
+  background-color: hsl(var(--content-selection));
+}
+
+/* Focus state */
+.ProseMirror:focus {
+  outline: none;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

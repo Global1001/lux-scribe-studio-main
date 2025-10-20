@@ -1,0 +1,14 @@
+name: myenv
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10  # or whatever you need
+  - pymupdf>=1.19.0
+  - python-docx>=0.8.10
+  - lxml>=4.6.0
+  - fonttools>=4.25.0
+  - pip
+  - pip:
+      - pdf2docx>=0.5.6
