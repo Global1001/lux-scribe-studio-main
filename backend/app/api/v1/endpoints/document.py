@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UPLOAD_DIR = os.path.join(BASE_DIR, "../../../uploads")
 
 
-@router.options("/config")
+@router.options("/editor-config")
 async def handle_options():
     return Response(status_code=204, headers={
         "Access-Control-Allow-Origin": "*",
@@ -23,7 +23,7 @@ async def handle_options():
         "Access-Control-Allow-Headers": "Authorization, Content-Type, x-client-info, apikey",
     })
 
-@router.post("/config")
+@router.post("/editor-config")
 async def editor_config(request: Request):
     try:
         body = await request.json()
